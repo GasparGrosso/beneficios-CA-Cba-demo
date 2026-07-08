@@ -2,8 +2,7 @@
 
 Prototipo navegable del flujo completo de interfaces. Modulariza en archivos
 independientes las vistas que estaban embebidas en un único `index.html`
-(Login, Menú Beneficios y QR) y las cablea con las 4 pantallas ya diseñadas
-(Menú Afiliado, Panel de Control, Formulario y QR Validación).
+(Login, Menú Beneficios y QR) y las cablea con las 4 pantallas para los distintos tipos de usuarios
 
 ## Cómo correr
 
@@ -18,11 +17,6 @@ powershell -File serve.ps1
 python -m http.server 5500
 ```
 
-Luego abrí **http://localhost:5500/**.
-
-> También podés abrir `index.html` directamente (doble click). Cada pantalla
-> funciona, pero en `file://` algunos navegadores aíslan `localStorage`, por lo
-> que el "beneficio recién registrado" podría no verse reflejado entre páginas.
 
 ## Flujo de navegación
 
@@ -62,26 +56,7 @@ Luego abrí **http://localhost:5500/**.
 | `assets/` | Logo e imágenes de eventos |
 | `assets/vendor/` | React, ReactDOM y Babel locales (para correr sin internet) |
 
-## Notas de implementación
 
-- Las pantallas Login, Menú Beneficios y ambos QR se reescribieron como páginas
-  React independientes, extraídas del `index.html` original. React, ReactDOM y
-  Babel se sirven **localmente** desde `assets/vendor/` (no por CDN), para que el
-  prototipo funcione **sin conexión a internet** ("ejecutable con doble clic").
-- Las 4 pantallas provistas son "bundles" (se conservan intactas); la navegación,
-  la precarga del formulario y la inyección de beneficios se agregan con `flow.js`.
-- Todo dato que no proviene de un input declarado está **mockeado** con ejemplos
-  (regional, logo/iniciales, color, usos, fechas, códigos QR).
-- La integración del beneficio nuevo dentro de la grilla de los bundles es
-  *best-effort* (clona una tarjeta existente); si no encuentra plantilla, muestra
-  una sección "Beneficios registrados (demo)".
-- **Responsive:** todas las pantallas se adaptan a mobile. En los bundles se logra
-  con un bloque `<style id="cac-responsive">` (media query `max-width:720px`) que
-  colapsa las grillas multi-columna a una sola columna y la barra lateral del Menú
-  Afiliado a un bloque apilado; el layout de escritorio no cambia.
-- **Navegación:** el Panel de Control tiene botón **"Salir"** (→ login) y el
-  Formulario tiene el botón de volver cableado, que regresa a la pantalla de origen
-  según `?from=` (`panel` → Panel de Control, `afiliado` → Menú Afiliado).
 
 ## Reset del estado
 
