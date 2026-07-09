@@ -17,6 +17,11 @@ powershell -File serve.ps1
 python -m http.server 5500
 ```
 
+Luego abrí **http://localhost:5500/**.
+
+> También podés abrir `index.html` directamente (doble click). Cada pantalla
+> funciona, pero en `file://` algunos navegadores aíslan `localStorage`, por lo
+> que el "beneficio recién registrado" podría no verse reflejado entre páginas.
 
 ## Flujo de navegación
 

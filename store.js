@@ -25,6 +25,7 @@
     { id:'c6', logo:'MD', color:'#06B6D4', nombre:'Mobiliario Diseño Urbano',      cat:'Mobiliario & Decoración',     desc:18, regional:'Regional 4', tipo:'comercial', uses:27 },
     { id:'c7', logo:'CS', color:'#0F172A', nombre:'CAD & BIM Soluciones',          cat:'Licencias Software BIM',      desc:40, regional:'Provincial', tipo:'comercial', uses:22 },
     { id:'c8', logo:'LS', color:'#EC4899', nombre:'Librería Técnica Sur',          cat:'Libros & Revistas',           desc:15, regional:'Regional 5', tipo:'comercial', uses:17 },
+    { id:'c9', logo:'LS', color:'#EC4899', nombre:'Librería Técnica Sur',          cat:'Planos e Impresión Técnica',  desc:50, descLabel:'2x1', regional:'Regional 5', tipo:'comercial', uses:9 },
   ];
 
   var ACADEMICOS = [
